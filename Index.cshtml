@@ -1,0 +1,62 @@
+﻿@model IEnumerable<TasskTracking.Models.Task_Tracking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.task_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Task_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assingee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.due_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.priority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.task_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Task_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assingee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.due_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.priority)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.statue)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.id }) 
+        </td>
+    </tr>
+}
+
+</table>
